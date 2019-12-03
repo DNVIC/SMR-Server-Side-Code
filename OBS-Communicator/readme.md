@@ -8,18 +8,9 @@ Create a scene with window captures with names starting with index 0 to however 
 
 Download and install the OBS Websockets Plugin [here] (https://github.com/Palakis/obs-websocket)
 
-Install the OBS Websocket Javascript API using either npm or bower in the shell/terminal/command line
-
-```sh
-npm install obs-websocket-js --save
-
-bower install obs-websocket-js --save
-```
-Download the other files in this folder (NEEDS to be downloaded and run locally unless you have the port your websocket server is running on portforwarded.)
-
 Go into the settings on the websocket plugin in OBS (under tools), and change the port and password to whatever you want.
 
-Open the html file in this folder that you downloaded
+Go to dnvic.ga/SMR-Server-Side-Code/OBS-Communicator
 
 Enter the IP (if local use 127.0.0.1), port, and password from the websocket program in their respective forms
 
