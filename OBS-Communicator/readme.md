@@ -1,4 +1,4 @@
-#OBS-Communicator
+# OBS-Communicator
 
 How to use my weird system:
 
@@ -6,7 +6,7 @@ Finish the instructions on the other parts of this server-side system first.
 
 Create a scene with window captures with names starting with index 0 to however many screens you want on stream (I usually put them in layouts with powers of 2 with one extra, where if there are 4 people competing you use 3 captures and the slowest person is not on the restream, while if there are 5 people, everyone is on the restream
 
-Download and install the OBS Websockets Plugin [here] (https://github.com/Palakis/obs-websocket)
+Download and install the OBS Websockets Plugin [here](https://github.com/Palakis/obs-websocket)
 
 Go into the settings on the websocket plugin in OBS (under tools), and change the port and password to whatever you want.
 
