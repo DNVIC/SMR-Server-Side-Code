@@ -10,7 +10,7 @@ Download and install the OBS Websockets Plugin [here](https://github.com/Palakis
 
 Go into the settings on the websocket plugin in OBS (under tools), and change the port and password to whatever you want.
 
-Go to (dnvic.ga/SMR-Server-Side-Code/OBS-Communicator)
+Go to https://dnvic.ga/SMR-Server-Side-Code/OBS-Communicator
 
 Enter the IP (if local use 127.0.0.1), port, and password from the websocket program in their respective forms
 
