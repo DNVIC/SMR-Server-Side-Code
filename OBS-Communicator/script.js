@@ -1,5 +1,5 @@
 function startConnecting() {
-    const obs = new OBSWebSocket();
+    obs = new OBSWebSocket();
 
     var ip = document.getElementById("03d").value
     console.log("Chosen IP Address:" + ip );
@@ -29,45 +29,11 @@ function startConnecting() {
         prop1=datt;
         console.log(prop0);
         console.log(prop1);
-        console.log(prop0.position.x);
-        obs.send('SetSceneItemProperties', {
-            "item": "0",
-            "position.x": 523,
-            "position.y": 250
-            /*"position.alignment": prop1.position.y,
-            "rotation": prop1.rotation,
-            "scale.x": prop1.scale.x,
-            "scale.y": prop1.scale.y,
-            "crop.top":prop1.crop.top,
-            "crop.bottom":prop1.crop.bottom,
-            "crop.left":prop1.crop.left,
-            "crop.right":prop1.crop.right,
-            "visible": prop1.visible,
-            "locked": prop1.locked,
-            "bounds.type": prop1.bounds.type,
-            "bounds.alignment": prop1.bounds.alignment,
-            "bounds.x": prop1.bounds.x,
-            "bounds.y": prop1.bounds.y */
-        });
-        obs.send('SetSceneItemProperties', {
-            "item": "1",
-            "position.x": prop0.position.x,
-            "position.y": prop0.position.y,
-            /*"position.alignment": prop0.position.y,
-            "rotation": prop0.rotation,
-            "scale.x": prop0.scale.x,
-            "scale.y": prop0.scale.y,
-            "crop.top":prop0.crop.top,
-            "crop.bottom":prop0.crop.bottom,
-            "crop.left":prop0.crop.left,
-            "crop.right":prop0.crop.right,
-            "visible": prop0.visible,
-            "locked": prop0.locked,
-            "bounds.type": prop0.bounds.type,
-            "bounds.alignment": prop0.bounds.alignment,
-            "bounds.x": prop0.bounds.x,
-            "bounds.y": prop0.bounds.y*/
-        })
+        swapSourceProperties(prop0, prop1);
+
+
+
+
     })
     .then(data =>{
 
@@ -81,5 +47,60 @@ function startConnecting() {
     });
 }
 
-
+function swapSourceProperties(propx, propy) {
+    obs.send('SetSceneItemProperties', {
+        "item": propx.name,
+        "position": {
+            "x":propy.position.x,
+            "y":propy.position.y, 
+            "alignment":propy.position.alignment
+        },
+        "rotation": propy.rotation,
+        "scale": {
+            "x":propy.scale.x,
+            "y":propy.scale.y
+        },
+        "crop": {
+            "top": propy.crop.top,
+            "bottom": propy.crop.bottom,
+            "left": propy.crop.left,
+            "right": propy.crop.right
+        },
+        "visible": propy.visible,
+        "locked": propy.locked,
+        "bounds": {
+            "type":propy.bounds.type,
+            "alignment":propy.bounds.alignment,
+            "x": propy.bounds.x,
+            "y": propy.bounds.y
+        }
+    });
+    obs.send('SetSceneItemProperties', {
+        "item": propy.name,
+        "position": {
+            "x":propx.position.x,
+            "y":propx.position.y, 
+            "alignment":propx.position.alignment
+        },
+        "rotation": propx.rotation,
+        "scale": {
+            "x":propx.scale.x,
+            "y":propx.scale.y
+        },
+        "crop": {
+            "top": propx.crop.top,
+            "bottom": propx.crop.bottom,
+            "left": propx.crop.left,
+            "right": propx.crop.right
+        },
+        "visible": propx.visible,
+        "locked": propx.locked,
+        "bounds": {
+            "type":propx.bounds.type,
+            "alignment":propx.bounds.alignment,
+            "x": propx.bounds.x,
+            "y": propx.bounds.y
+        }
+    });
+}
 
