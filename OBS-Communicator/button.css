@@ -1,0 +1,46 @@
+/* Dropdown Button */
+.thelink {
+    background-color: #656565;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    /*border-bottom: 2px solid black; */
+}
+
+/* Dropdown button on hover & focus */
+.thelink:hover, .thelink:focus {
+    background-color: #A2A2A2;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.linkselector {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.insideselector {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    /*border-bottom: 1px solid gray; */
+}
+
+/* Links inside the dropdown */
+.insideselector a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.insideselector a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
