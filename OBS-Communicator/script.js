@@ -1,14 +1,38 @@
+try {
+    document.getElementById("03d").value = localstorage.getItem("ip");
+} 
+catch(err) {
+    console.log(err.name);
+}
+try {
+    document.getElementById("03e").value = localstorage.getItem("port");
+} 
+catch(err) {
+    console.log(err.name);
+}
+try {
+    document.getElementById("03f").value = localstorage.getItem("pass");
+} 
+catch(err) {
+    console.log(err.name);
+}
+
+
 function startConnecting() {
     obs = new OBSWebSocket();
 
     var ip = document.getElementById("03d").value
     console.log("Chosen IP Address:" + ip );
+    localstorage.setItem("ip", ip);
     var port = document.getElementById("03e").value
+    localstorage.setItem("port", port);
     console.log("Chosen Port:" + port);
+    var pass = document.getElementById("03f").value;
+    localstorage.setItem("pass", pass);
+    console.log("Chosen Password:" + pass);
 
 
-
-    obs.connect({ address: ip + ":" + port, password: '123454321' })
+    obs.connect({ address: ip + ":" + port, password: pass })
     .then(() => {
         console.log("connected successfully");
         return obs.send('GetSceneItemProperties', {
