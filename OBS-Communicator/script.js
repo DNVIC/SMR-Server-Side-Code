@@ -1,21 +1,13 @@
-try {
-    document.getElementById("03d").value = localstorage.getItem("ip");
-} 
-catch(err) {
-    console.log(err.name);
-}
-try {
-    document.getElementById("03e").value = localstorage.getItem("port");
-} 
-catch(err) {
-    console.log(err.name);
-}
-try {
-    document.getElementById("03f").value = localstorage.getItem("pass");
-} 
-catch(err) {
-    console.log(err.name);
-}
+
+var localstorage = window.localstorage;
+
+document.getElementById("03d").value = localstorage.getItem("ip");
+
+document.getElementById("03e").value = localstorage.getItem("port");
+
+
+document.getElementById("03f").value = localstorage.getItem("pass");
+
 
 
 function startConnecting() {
@@ -23,12 +15,12 @@ function startConnecting() {
 
     var ip = document.getElementById("03d").value
     console.log("Chosen IP Address:" + ip );
-    localstorage.setItem("ip", ip);
+    window.localstorage.setItem("ip", ip);
     var port = document.getElementById("03e").value
-    localstorage.setItem("port", port);
+    window.localstorage.setItem("port", port);
     console.log("Chosen Port:" + port);
     var pass = document.getElementById("03f").value;
-    localstorage.setItem("pass", pass);
+    window.localstorage.setItem("pass", pass);
     console.log("Chosen Password:" + pass);
 
 
